@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://coh50e3ys7g8t"]
+
+[ext_resource type="Texture2D" uid="uid://d3y42fvqy6gh8" path="res://icon.svg" id="1_mnhl1"]
+
+[sub_resource type="GDScript" id="GDScript_jbgpj"]
+resource_name = "player"
+script/source = "extends CharacterBody2D
+
+const MOVEMENT_SPEED: float = 10.
+@export var player_index: int = 1
+
+func _ready() -> void:
+	pass # Replace with function body.
+
+func _process(delta: float) -> void:
+	if Input.is_action_pressed(\"player%d_down\" % player_index):
+		position.y += MOVEMENT_SPEED
+	elif Input.is_action_pressed(\"player%d_up\" % player_index):
+		position.y -= MOVEMENT_SPEED
+	global_position = global_position.clamp(Vector2.ZERO, get_viewport_rect().size)
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mnhl1"]
+size = Vector2(32, 126)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = SubResource("GDScript_jbgpj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mnhl1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 1)
+texture = ExtResource("1_mnhl1")

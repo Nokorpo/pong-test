@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://dui0unc85rf5g"]
+
+[ext_resource type="PackedScene" uid="uid://coh50e3ys7g8t" path="res://pala.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://d3e0q51f4m7em" path="res://pelota.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://djkuikotycpec" path="res://porteria.tscn" id="3_h2yge"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Pala" parent="." instance=ExtResource("1_0xm2m")]
+position = Vector2(104, 337)
+
+[node name="Pala2" parent="." instance=ExtResource("1_0xm2m")]
+position = Vector2(995, 323)
+player_index = 2
+
+[node name="Pelota" parent="." instance=ExtResource("2_h2yge")]
+position = Vector2(585, 373)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(1152, 648)
+
+[node name="Porteria" parent="." node_paths=PackedStringArray("score_label") instance=ExtResource("3_h2yge")]
+score_label = NodePath("../CanvasLayer/Control/Label2")
+
+[node name="Porteria2" parent="." node_paths=PackedStringArray("score_label") instance=ExtResource("3_h2yge")]
+position = Vector2(1118, 0)
+score_label = NodePath("../CanvasLayer/Control/Label")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 64
+text = "1"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -37.0
+offset_bottom = 88.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 64
+text = "2"
