@@ -9,4 +9,4 @@ func test_game_starts():
 
 	# THEN
 	var ball: Node2D = game.find_child("Pelota")
-	assert_true(ball != null, "la pelota no existe")
+	assert_not_null(ball, "la pelota no existe")
