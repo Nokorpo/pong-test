@@ -1,26 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://djkuikotycpec"]
 
-[sub_resource type="GDScript" id="GDScript_t7vw5"]
-resource_name = "porteria"
-script/source = "extends Area2D
-
-@export var score_label: Label
-var score: int = 0
-
-func _ready() -> void:
-	score_label.text = str(score)
-
-func _on_body_entered(body: Node2D) -> void:
-	score += 1
-	score_label.text = str(score)
-	body.reset()
-"
+[ext_resource type="Script" uid="uid://3xyo6g2ase5m" path="res://porteria.gd" id="1_tghm2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t7vw5"]
 size = Vector2(52, 684)
 
 [node name="Porteria" type="Area2D"]
-script = SubResource("GDScript_t7vw5")
+script = ExtResource("1_tghm2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(16, 332)

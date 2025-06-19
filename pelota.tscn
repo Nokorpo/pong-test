@@ -1,34 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://d3e0q51f4m7em"]
 
+[ext_resource type="Script" uid="uid://bsfp3u1vu3r6x" path="res://pelota.gd" id="1_0okw3"]
 [ext_resource type="Texture2D" uid="uid://d3y42fvqy6gh8" path="res://icon.svg" id="2_p7cd6"]
-
-[sub_resource type="GDScript" id="GDScript_sha3n"]
-resource_name = "pelota"
-script/source = "extends CharacterBody2D
-
-const INITIAL_SPEED: float = 250.
-var speed: Vector2 = Vector2.ZERO
-
-func _ready() -> void:
-	speed = Vector2(1,1) * INITIAL_SPEED
-
-func _process(delta: float) -> void:
-	velocity = speed
-	var collision := move_and_slide()
-	if collision:
-		speed.x *= -1
-	if not get_viewport_rect().has_point(global_position):
-		speed.y *= -1
-
-func reset() -> void:
-	global_position = get_viewport_rect().get_center()
-"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sha3n"]
 radius = 20.0998
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-script = SubResource("GDScript_sha3n")
+script = ExtResource("1_0okw3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_sha3n")
