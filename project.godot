@@ -15,6 +15,10 @@ run/main_scene="uid://dui0unc85rf5g"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gut/plugin.cfg")
+
 [input]
 
 player1_up={
