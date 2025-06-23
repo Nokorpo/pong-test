@@ -55,3 +55,5 @@ offset_bottom = 88.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 64
 text = "2"
+
+[connection signal="goal_scored" from="Porteria" to="Porteria" method="_on_goal_scored"]
