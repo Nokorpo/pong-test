@@ -37,8 +37,11 @@ class TestIntegrationBall extends GutTest:
 		var initial_score := score_label.text
 
 		# WHEN
-		await wait_seconds(1)
+		var goal = game.find_child("Porteria2")
+		watch_signals(goal)
+		await wait_for_signal(goal.goal_scored, 1, "waiting for the goal to be scored")
 
 		# THEN
 		assert_ne(score_label.text, initial_score, "the score didn't change")
 		assert_gt(score_label.text, initial_score, "the score didn't increase")
+		assert_signal_emitted(goal.goal_scored)
