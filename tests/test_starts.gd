@@ -1,12 +1,22 @@
 extends GutTest
 
-func test_game_starts():
+var game: Node2D
+
+func before_each():
 	# GIVEN
-	var game: Node2D = add_child_autofree(load("res://main.tscn").instantiate())
+	game = load("res://main.tscn").instantiate()
+	add_child(game)
 
-	# WHEN
-	#it is loaded
+func after_each():
+	game.free()
 
+func test_game_starts():
+	# WHEN it is loaded
+	# THEN
+	assert_not_null(game, "game could not be loaded")
+
+func test_ball_exists():
+	# WHEN it is loaded
 	# THEN
 	var ball: Node2D = game.find_child("Pelota")
-	assert_not_null(ball, "la pelota no existe")
+	assert_not_null(ball, "ball does not exist")

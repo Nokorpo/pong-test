@@ -16,9 +16,6 @@ player_index = 2
 [node name="Pelota" parent="." instance=ExtResource("2_h2yge")]
 position = Vector2(585, 373)
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(1152, 648)
-
 [node name="Porteria" parent="." node_paths=PackedStringArray("score_label") instance=ExtResource("3_h2yge")]
 score_label = NodePath("../CanvasLayer/Control/Label2")
 
