@@ -1,34 +1,34 @@
-[gd_scene load_steps=4 format=3 uid="uid://dui0unc85rf5g"]
+[gd_scene format=3 uid="uid://dui0unc85rf5g"]
 
 [ext_resource type="PackedScene" uid="uid://coh50e3ys7g8t" path="res://pala.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://d3e0q51f4m7em" path="res://pelota.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://djkuikotycpec" path="res://porteria.tscn" id="3_h2yge"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=1080802534]
 
-[node name="Pala" parent="." instance=ExtResource("1_0xm2m")]
+[node name="Pala" parent="." unique_id=600395302 instance=ExtResource("1_0xm2m")]
 position = Vector2(104, 337)
 
-[node name="Pala2" parent="." instance=ExtResource("1_0xm2m")]
+[node name="Pala2" parent="." unique_id=1211890813 instance=ExtResource("1_0xm2m")]
 position = Vector2(995, 323)
 player_index = 2
 
-[node name="Pelota" parent="." instance=ExtResource("2_h2yge")]
+[node name="Pelota" parent="." unique_id=1767011306 instance=ExtResource("2_h2yge")]
 position = Vector2(585, 373)
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Node2D" type="Node2D" parent="." unique_id=540509669]
 position = Vector2(1152, 648)
 
-[node name="Porteria" parent="." node_paths=PackedStringArray("score_label") instance=ExtResource("3_h2yge")]
+[node name="Porteria" parent="." unique_id=515597052 node_paths=PackedStringArray("score_label") instance=ExtResource("3_h2yge")]
 score_label = NodePath("../CanvasLayer/Control/Label2")
 
-[node name="Porteria2" parent="." node_paths=PackedStringArray("score_label") instance=ExtResource("3_h2yge")]
+[node name="Porteria2" parent="." unique_id=1681452784 node_paths=PackedStringArray("score_label") instance=ExtResource("3_h2yge")]
 position = Vector2(1118, 0)
 score_label = NodePath("../CanvasLayer/Control/Label")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=152511405]
 
-[node name="Control" type="Control" parent="CanvasLayer"]
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=895914413]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,14 +38,14 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="CanvasLayer/Control"]
+[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=1690066816]
 layout_mode = 1
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 64
 text = "1"
 
-[node name="Label2" type="Label" parent="CanvasLayer/Control"]
+[node name="Label2" type="Label" parent="CanvasLayer/Control" unique_id=254187089]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
