@@ -4,7 +4,7 @@ var main_scene: PackedScene = load("res://main.tscn")
 
 func test_score_signal_is_emitted():
 	# GIVEN
-	var game: Node2D = add_child_autofree(load("res://porteria.tscn").instantiate())
+	var game: Node2D = add_child_autofree(main_scene.instantiate())
 	var goal: Node2D = game.find_child("Porteria2")
 	watch_signals(goal)
 

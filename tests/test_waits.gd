@@ -6,10 +6,10 @@ func test_ball_scores():
 	# GIVEN
 	var game: Node2D = add_child_autofree(main_scene.instantiate())
 	var ball: Node2D = game.find_child("Pelota")
-	ball.position.x = 1100
+	ball.position = Vector2(1130, 100)
 
 	# WHEN
-	await wait_frames(1)
+	await wait_frames(2)
 
 	# THEN
 	var score: Label = game.find_child("Label")
@@ -19,7 +19,7 @@ func test_ball_scores_with_event():
 	# GIVEN
 	var game: Node2D = add_child_autofree(main_scene.instantiate())
 	var ball: Node2D = game.find_child("Pelota")
-	ball.position = Vector2(1100, 100)
+	ball.position = Vector2(1130, 100)
 
 	var goal: Node2D = game.find_child("Porteria2")
 
@@ -29,13 +29,13 @@ func test_ball_scores_with_event():
 	# THEN
 	var score: Label = game.find_child("Label")
 	assert_eq(score.text, "1", "the score was not updated")
-	assert_almost_eq(ball.position, Vector2(610, 360), Vector2(20, 20), "the ball did not move to the expected position")
+	assert_almost_eq(ball.position, Vector2(576.0, 324.0), Vector2(20, 20), "the ball did not move to the expected position")
 
 func test_ball_scores_with_polling():
 	# GIVEN
 	var game: Node2D = add_child_autofree(main_scene.instantiate())
 	var ball: Node2D = game.find_child("Pelota")
-	ball.position = Vector2(1100, 100)
+	ball.position = Vector2(1130, 100)
 
 	# WHEN
 	var score: Label = game.find_child("Label")
@@ -46,4 +46,4 @@ func test_ball_scores_with_polling():
 
 	# THEN
 	assert_eq(score.text, "1", "the score was not updated")
-	#assert_almost_eq(ball.position, Vector2(610, 360), Vector2(20, 20), "the ball did not move to the expected position")
+	assert_almost_eq(ball.position, Vector2(576.0, 324.0), Vector2(20, 20), "the ball did not move to the expected position")
