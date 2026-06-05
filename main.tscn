@@ -14,7 +14,7 @@ position = Vector2(995, 323)
 player_index = 2
 
 [node name="Pelota" parent="." unique_id=1767011306 instance=ExtResource("2_h2yge")]
-position = Vector2(585, 373)
+position = Vector2(576, 324)
 
 [node name="Node2D" type="Node2D" parent="." unique_id=540509669]
 position = Vector2(1152, 648)
