@@ -14,10 +14,7 @@ position = Vector2(995, 323)
 player_index = 2
 
 [node name="Pelota" parent="." unique_id=1767011306 instance=ExtResource("2_h2yge")]
-position = Vector2(576, 324)
-
-[node name="Node2D" type="Node2D" parent="." unique_id=540509669]
-position = Vector2(1152, 648)
+position = Vector2(528, 365)
 
 [node name="Porteria" parent="." unique_id=515597052 node_paths=PackedStringArray("score_label") instance=ExtResource("3_h2yge")]
 score_label = NodePath("../CanvasLayer/Control/Label2")
@@ -37,6 +34,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=1690066816]
 layout_mode = 1
@@ -44,6 +42,7 @@ offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 64
 text = "1"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="CanvasLayer/Control" unique_id=254187089]
 layout_mode = 1
@@ -55,3 +54,7 @@ offset_bottom = 88.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 64
 text = "2"
+metadata/_edit_use_anchors_ = true
+
+[node name="Node2D" type="Node2D" parent="." unique_id=2088080366]
+position = Vector2(576, 324)
